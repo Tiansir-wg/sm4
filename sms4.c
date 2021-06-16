@@ -22,6 +22,8 @@ int encrypt(unsigned char *plaintext, int plaintext_len, unsigned char *key,
     if (!(ctx = EVP_CIPHER_CTX_new()))
         handleErrors();
 
+    // EVP_CIPHER_CTX_set_padding(ctx, 0);
+
     /* Initialise the encryption operation. IMPORTANT - ensure you use a key
 * and IV size appropriate for your cipher
 * In this example we are using 256 bit AES (i.e. a 256 bit key). The
